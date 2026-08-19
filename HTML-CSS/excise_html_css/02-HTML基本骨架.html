@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02-HTML基本骨架练习</title>
+</head>
+<body>
+
+  <!-- ============================================================
+       知识点：HTML 基本骨架
+       <html>
+         <head> 给浏览器看（标题、样式、编码） </head>
+         <body> 给用户看（正文内容） </body>
+       </html>
+       ============================================================ -->
+
+  <!-- TODO 1【最小骨架 + title】
+       搭建一个完整的最小骨架（html / head / body）。
+       在 head 里写 <title>，内容随便起个名字；body 里写一句话。
+       目标效果：浏览器标签页顶部显示你起的 title 名字，页面里显示 body 那句话 -->
+  <!-- 提示：title 的文字不出现在页面里，它显示在标签页上 -->
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>02-HTML基本骨架练习</title>
+      </head>
+      <body>
+        <p>这是我的第一个 HTML 页面。</p>
+      </body>
+    </html>    
+
+
+  <!-- TODO 2【head 和 body 的分工】
+       在 head 里写一段 <style>，让 body 里所有 <p> 变成蓝色。
+       目标效果：页面文字变蓝，但你看不到那段 style 代码（它是给浏览器看的） -->
+  <!-- 提示：<style> 写在 head 里；body 里放 p 标签。
+       思考：为什么样式代码"藏"在 head 里，用户看不见？ -->
+       <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>02-HTML基本骨架练习</title>
+        <style>
+          p {
+            color: blue;
+          }
+        </style>
+      </head>
+      <body>
+        <p>这是我的第一个 HTML 页面。</p>
+      </body>
+    </html>
+       </html>
+
+</body>
+</html>

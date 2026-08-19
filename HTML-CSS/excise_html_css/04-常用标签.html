@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04-常用标签练习</title>
+</head>
+<body>
+
+  <!-- ============================================================
+       知识点：常用标签
+       h1~h6 标题 | a 超链接 | img 图片 | p 段落
+       div 块级(独占一行) | span 行内(一行多个)
+       ============================================================ -->
+
+  <!-- TODO 1【标题 + 链接 + 图片】
+       1. 写一个 h1 和一个 h6，内容自拟
+       2. 写一个超链接，点击后在新标签页打开百度
+       3. 插一张图片，宽度 100px
+       目标效果：h1 明显比 h6 大；链接在新标签页打开；图片只显示 100px 宽 -->
+  <!-- 提示：链接用 a 标签，href 填地址，target="_blank" 是新标签页 -->
+  <!-- 图片地址：https://web-framework.oss-cn-hangzhou.aliyuncs.com/2023/1.jpg -->
+   <h1>这是一个标题</h1>
+   <h6>这是一个标题</h6>
+   <a href = "https://www.baidu.com" target="_blank">百度一下</a>
+   <img src = "https://web-framework.oss-cn-hangzhou.aliyuncs.com/2023/1.jpg" width="100px">
+
+
+  <!-- TODO 2【div 块级 vs span 行内】
+       写两个 div，背景色用浅红；再写两个 span，背景色用浅绿。
+       目标效果：两个 div 各占一行（被挤到两行），两个 span 挤在同一行 -->
+  <!-- 提示：div 背景 style="background:#ffcccc"，span 背景 style="background:#ccffcc"
+       思考：为什么 div 适合做"一行一块"的布局，span 适合做"一句话里局部上色"？ -->
+<div style="background:#ffcccc">我是第一行</div>
+<div style="background:#ffcccc">我是第二行</div>
+<span style="background:#ccffcc">我是第一行</span>
+<span style="background:#ccffcc">我是第二行</span>
+</body>
+</html>

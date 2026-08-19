@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>06-CSS引入方式练习</title>
+  <style> 
+     .inner{
+       color: blue;
+     }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       知识点：CSS 三种引入方式
+       行内：写在标签 style 上（少用，冗余）
+       内部：<style> 写在 head（练习用）
+       外部：<link> 引入 .css 文件（企业主流）
+       ============================================================ -->
+
+  <!-- TODO 1【三种方式给同一句话上色】
+       准备三行文字（span 或 p 都行）：
+       1. 第一行用"行内样式"变红色
+       2. 第二行用"内部样式"(head 里的 <style>)变蓝色
+       3. 第三行用"外部样式"(link 引入 style.css)变绿色
+       目标效果：三行文字三种颜色，且颜色来源各不同 -->
+  <!-- 提示：内部样式写在 head 的 <style> 里，需要给标签一个 class -->
+     <span style="color:red;"> 我是第一行</span>
+     <span class="inner">我是第二行</span>
+     <div class="title">我是第三行</div>
+
+
+  <!-- TODO 2【外部样式：企业主流写法】
+       1. 在 excise_html_css 目录下新建一个 style.css 文件
+       2. 在 style.css 里定义一个类，让文字变绿色 + 加粗
+       3. 在本 html 的 head 里用 <link> 引入它
+       4. 写一个 div 加上这个类
+       目标效果：div 文字变绿色加粗，样式来自外部 css 文件 -->
+  <!-- 提示：link 标签写法 <link rel="stylesheet" href="style.css">，放在 head 里
+       思考：为什么企业都用"外部样式"？改样式时是不是可以只改 css 文件、不动 html？ -->
+       <div class="title">我是第三行</div>
+</body>
+</html>

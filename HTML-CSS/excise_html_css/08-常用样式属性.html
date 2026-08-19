@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>08-常用样式属性练习</title>
+  <style>
+     p{
+          color: red;
+          font-size: 20px;
+          font-weight: bold;
+          font-family: "楷体";
+          text-indent: 2em;
+          line-height: 2;
+     }
+     a{
+          text-decoration: none;
+     }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       知识点：常用样式属性
+       文字：color / font-size / font-weight / font-family
+       去下划线：text-decoration: none
+       段落：line-height(行高) / text-indent(首行缩进)
+       颜色写法：red / #333 / rgb(...)
+       ============================================================ -->
+       
+  <!-- TODO 1【文字样式全家桶】
+       写一个 p，用 CSS 设置：颜色、字号 20px、加粗、字体"楷体"。
+       目标效果：文字是楷体、20px、加粗，颜色自定义 -->
+  <!-- 提示：四件套 color / font-size / font-weight / font-family -->
+  <!-- 颜色三种写法任选一种：red、#b2b2b2、rgb(178,178,178) -->
+   <p>我是第一行</p>
+       <p>我是第二行</p>
+       <p>我是第三行</p>
+
+
+  <!-- TODO 2【段落 + 去下划线】
+       1. 写一段两行以上的文字，设置首行缩进 2 个字 + 行高 2 倍
+       2. 写一个超链接，去掉它的下划线
+       目标效果：段落首行缩进、行距松散；链接没下划线 -->
+  <!-- 提示：text-indent: 2em 首行缩进；line-height: 2 行高；a{text-decoration:none} 去下划线
+       思考：新闻正文、导航栏的链接为什么都不带下划线？ -->
+       <p>我是第一行阿瓦达大师大卫夫人个人感觉人工外人间隔饿哦i给我i俄国Howie化工而偶感风寒为欧冠i和</p>
+       <a href="https://www.baidu.com" target="_blank">百度一下</a>
+
+</body>
+</html>

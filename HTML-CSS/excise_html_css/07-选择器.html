@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>07-选择器练习</title>
+  <style> 
+  p {
+    color: red;
+  }
+  .cls{
+     color:blue
+  }
+  #box{
+     color:green
+  }
+  .class{
+     color:orange;
+     font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       知识点：选择器
+       元素选择器 p { }     选所有 p
+       类选择器   .cls { }  选 class，最常用
+       id选择器   #id { }   选 id，唯一
+       ============================================================ -->
+
+  <!-- TODO 1【三种选择器各自命中】
+       在 head 的 <style> 里写三种选择器：
+       1. 元素选择器让所有 <p> 变红色
+       2. 类选择器让 class="cls" 的元素变蓝色
+       3. id选择器让 id="box" 的元素变绿色
+       然后写三个标签分别命中它们。
+       目标效果：三种颜色各归其位 -->
+  <!-- 提示：元素直接写名字 p；类加 . ；id 加 # -->
+   <p>我是第一行</p>
+   <span class="cls">我是第二行</span>
+   <div id = "box">我是第三行</div>
+
+
+  <!-- TODO 2【类选择器复用】
+       在 style 里定义一个类，让文字变橙色 + 加粗。
+       写三个 p 标签都用这个类。
+       目标效果：三处文字同时变橙加粗 -->
+  <!-- 提示：同一个 class 可以给多个标签用
+       思考：如果这里用 id 会怎样？id 为什么只能出现一次？ -->
+       <p class="class">我是第一行</p>
+       <p class="class">我是第二行</p>
+       <p class="class">我是第三行</p>
+</body>
+</html>
