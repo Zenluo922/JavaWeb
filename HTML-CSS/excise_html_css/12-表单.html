@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>12-表单练习</title>
+</head>
+<body>
+
+  <!-- ============================================================
+       知识点：表单（重点，后端必须吃透）
+       form 两属性：action(提交到哪)、method(GET/POST)
+       表单项：input / select / textarea
+       ⚠️ 大坑：表单项必须写 name，否则提交时数据丢失！
+       ============================================================ -->
+
+  <!-- TODO 1【GET vs POST 看 URL】
+       写两个表单，都提交到 /save，一个 method=get，一个 method=post。
+       每个表单里放：用户名、年龄 两个输入框 + 一个提交按钮。
+       填 Tom / 12，分别提交，观察地址栏。
+       目标效果：GET 提交后地址栏出现 ?username=Tom&age=12；POST 提交地址栏不变 -->
+  <!-- 提示：input 用 type=text，必须写 name；提交按钮用 input type=submit 或 button type=submit -->
+   <form action="/save" method="get">
+      <input type="text" name="username">
+     <input type="text" name="age">
+     <br>
+     <input type="submit" value="提交">
+   </form>
+
+
+  <!-- TODO 2【各种表单项 + name 的坑】
+       写一个表单，method=post，包含：
+       1. 姓名文本框(name=name)
+       2. 密码框(name=pwd)
+       3. 性别单选：男/女（同名 name 才能互斥）
+       4. 学历下拉框(select，本科/硕士)
+       5. 描述多行文本框(textarea)
+       6. 故意放一个"没有 name"的输入框
+       再加提交按钮。
+       目标效果：点提交后，F12 看请求，没 name 的那个框数据不见了 -->
+  <!-- 提示：radio 要同名 name 才能单选互斥；select 用 name 提交选中项
+       思考：后端 SpringBoot 用 @RequestParam 拿参数，靠的就是这个 name。
+             如果前端忘了写 name，后端拿到的是什么？ -->
+<form action="/save" method="post"> 
+     <input type="text" name="name"><br>
+     <input type="password" name="pwd"><br>
+     <input type="radio" name="sex" value="男">男
+     <input type="radio" name="sex" value="女">女<br>
+     <select name="education">
+          <option value="本科">本科</option>
+          <option value="硕士">硕士</option>
+     </select><br>
+     <textarea name="description"></textarea><br>
+     <input type="submit" value="提交">
+</form>
+
+
+  <!-- TODO 3【查询 / 清空按钮】
+       写一个查询表单，放两个按钮：
+       1. 一个 type=submit，文字"查询"，点击提交表单
+       2. 一个 type=reset，文字"清空"，点击把表单恢复成默认值
+       目标效果：填了内容点"清空"变回初始值，点"查询"走提交 -->
+  <!-- 提示：submit 提交表单，reset 重置表单（不用写 JS）
+       思考：查询按钮的本质是不是就是"提交表单"？为什么后端常用它触发一次查询请求？ -->
+<form action="/search" method="get">
+  <input type="text" name="keyword" value="默认值">
+  <button type="submit">查询</button>
+  <button type="reset">清空</button>
+</form>
+
+</body>
+</html>

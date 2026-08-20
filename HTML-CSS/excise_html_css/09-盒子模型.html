@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>09-盒子模型练习</title>
+  <style>
+     .box{
+          width: 200px;
+          height: 200px;
+          background-color: pink;
+          padding: 20px;
+          border: 10px solid red;
+          margin: 30px;
+     }
+     .box2{
+          width: 200px;
+          padding: 20px;
+          border: 10px solid red;
+     }
+     .box3{
+          width: 200px;
+          padding: 20px;
+          border: 10px solid red;
+          box-sizing: border-box;
+     }
+     .pad1{ padding: 20px; background-color: pink; }
+     .pad2{ padding: 20px 10px; background-color: lightgreen; }
+     .pad3{ padding: 10px 20px 30px 40px; background-color: lightblue; }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       知识点：盒子模型（重点）
+       content(内容) → padding(内边距) → border(边框) → margin(外边距)
+       盒子大小 = border + padding + content（margin 不算）
+       ============================================================ -->
+
+  <!-- TODO 1【四层结构】
+       写一个 div，设置：宽高 200px、背景色、内边距 20px、边框 10px 红色实线、外边距 30px。
+       目标效果：F12 打开开发者工具选中它，能看到 content/padding/border/margin 四层 -->
+  <!-- 提示：width/height 设 content 大小，padding 内边距，border 边框，margin 外边距 -->
+  <!-- 思考：margin 是"和别的盒子的距离"，它算在盒子自身大小里吗？ -->
+   <div class="box">这是第一句话</div>
+
+
+  <!-- TODO 2【box-sizing 的坑】
+       写两个 div 对比：
+       1. 第一个：width 200px + padding 20px + border 10px（不写 box-sizing）
+       2. 第二个：同样的值，但加上 box-sizing: border-box
+       目标效果：F12 看两个盒子实际总宽不一样——第一个是 260px，第二个是 200px -->
+  <!-- 提示：默认 content-box，width 只是 content；border-box 让 width 直接含 padding+border
+       思考：为什么说这是"最常见的坑"？布局时宽度算不对会发生什么？ -->
+       <div class="box2">这是第二句话</div>
+       <div class="box3">这是第三句话</div>
+
+
+  <!-- TODO 3【padding / margin 简写】
+       写三个 div，背景色不同，分别用三种简写设置 padding：
+       1. padding: 20px                → 四边都是 20px
+       2. padding: 20px 10px           → 上下 20、左右 10
+       3. padding: 10px 20px 30px 40px → 上 10、右 20、下 30、左 40
+       目标效果：F12 看三个盒子内边距各不相同 -->
+  <!-- 提示：一个值=四边；两个值=上下/左右；四个值=上右下左（顺时针）
+       思考：margin 的简写规则是不是和 padding 一模一样？ -->
+<div class="pad1">padding: 20px</div>
+<div class="pad2">padding: 20px 10px</div>
+<div class="pad3">padding: 10px 20px 30px 40px</div>
+</body>
+</html>

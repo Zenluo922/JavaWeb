@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>10-版心居中练习</title>
+  <style>
+    .box5{
+        width: 70%;
+        background-color: #f0f0f0;
+        margin: 0 auto;
+    }
+    #container{width: 80%; background-color: #f0f0f0; margin: 0 auto;}
+    .box6{width: 600px; background-color: #add8e6; margin: 0 auto;}
+     </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       知识点：版心居中（重点）
+       width + margin: 0 auto → 块级元素水平居中
+       ============================================================ -->
+
+  <!-- TODO 1【width + margin auto】
+       写一个 div，宽度占 70%，背景浅灰，让它水平居中。
+       目标效果：div 占 70% 宽，且左右居中 -->
+  <!-- 提示：核心一行 margin: 0 auto（上下 0、左右 auto 自动平分剩余空间） -->
+<div class="box5">这是第五句话</div>
+
+
+  <!-- TODO 2【容器包裹整页】
+       写一个外层 div(id=container)，宽 80% 并居中，背景浅灰。
+       在里面放一个 h1 标题和一段 p 文字。
+       目标效果：整块内容一起居中 -->
+  <!-- 提示：用一个外层 div 包住所有内容，给它 width + margin:0 auto
+       思考：回忆一下央视新闻正文页面，是不是就是这么居中的？ -->
+<div id="container">
+    <h1>这是标题</h1>
+    <p>这是段落</p>
+</div>
+
+
+  <!-- TODO 3【固定像素宽 vs 百分比宽】
+       再写一个 div，用固定宽度 600px 让它居中，背景色换成浅蓝。
+       和上面 70% 那个对比，拖拽浏览器窗口宽度，观察两者变化。
+       目标效果：600px 那个始终是 600 宽；70% 那个会跟着窗口变 -->
+  <!-- 提示：固定 px 宽不随窗口缩放，百分比宽随窗口缩放
+       思考：为什么"版心居中"必须给元素设一个 width？不设 width 会怎样？ -->
+       <div class="box6">这是第六句话</div>
+</body>
+</html>

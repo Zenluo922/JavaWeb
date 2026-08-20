@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>11-Flex布局练习</title>
+  <style>
+    .container{
+        display: flex;
+        width: 80%;
+        height: 100px;
+        background-color: red;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+    .item{
+     width: 100px;
+     height: 100px;
+     background-color: blue;
+    }
+    .item2{
+     width: 100px;  
+     height: 100px;
+     background-color: green;
+    }
+    .item3{
+     width: 100px;
+     height: 100px;
+     background-color: yellow;  
+    }
+    .c1{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      color: #fff;
+      padding: 0 20px;
+    }
+    a{
+      text-decoration: none;
+    }
+    .start{
+      display: flex;
+      justify-content: flex-start;
+    }
+    .center{
+      display: flex;
+      justify-content: center;
+    }
+    .row{
+      display: flex;
+    }
+    .col{
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       知识点：Flex 布局（重点）
+       给父容器加 display:flex，子元素排成一行
+       justify-content：主轴对齐（flex-start / center / space-between / space-around）
+       align-items：交叉轴居中
+       主轴 row 是横向，column 是纵向
+       ============================================================ -->
+
+  <!-- TODO 1【justify-content 各值】
+       写三个 flex 容器（父容器 display:flex），每个里面放 3 个小方块(div)。
+       三个容器分别用 justify-content: flex-start / center / space-between。
+       目标效果：第一行靠左、第二行居中、第三行两端贴边中间平分 -->
+  <!-- 提示：小方块用 div 设置宽高 + 背景色；父容器设 display:flex 和 justify-content
+       建议自己再改成 flex-end、space-around 对比效果 -->
+       <div class="start">
+     <div class="item">1</div>
+     <div class="item2">2</div>
+     <div class="item3">3</div>
+   </div>
+       <div class="center">
+     <div class="item">1</div>
+     <div class="item2">2</div>
+     <div class="item3">3</div>
+   </div>
+       <div class="container">
+     <div class="item">1</div>
+     <div class="item2">2</div>
+     <div class="item3">3</div>
+   </div>
+
+
+  <!-- TODO 2【导航栏实战】
+       做一个顶部导航栏：左边是系统标题，右边是"退出登录"链接。
+       要求：标题靠左、链接靠右，两者垂直居中，背景深灰、文字白色。
+       目标效果：和 Tlias 教学管理系统顶部导航栏一样 -->
+  <!-- 提示：父容器 display:flex + justify-content:space-between + align-items:center
+       链接记得 text-decoration:none 去下划线
+       思考：为什么 space-between 能让"标题左、退出登录右"？ -->
+       <div class="c1">
+          <h1>系统标题</h1>
+          <a href="#">退出登录</a>
+       </div>
+
+
+  <!-- TODO 3【主轴方向：row vs column】
+       写一个 flex 容器，默认横向排布，里面放 3 个小方块。
+       再写一个一样的容器，加上 flex-direction: column，让 3 个小方块竖着排。
+       目标效果：第一个横向排，第二个纵向排 -->
+  <!-- 提示：默认主轴是 row(横向)，flex-direction: column 改成纵向
+       思考：纵向排布后，justify-content 控制的是"上下"还是"左右"？ -->
+   <div class="row">
+     <div class="item">1</div>
+     <div class="item2">2</div>
+     <div class="item3">3</div>
+   </div>
+   <div class="col">
+     <div class="item">1</div>
+     <div class="item2">2</div>
+     <div class="item3">3</div>
+   </div>
+
+</body>
+</html>
