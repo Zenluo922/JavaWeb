@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue基础3：v-model双向绑定</title>
+</head>
+<body>
+
+  <!-- ============================================================
+       【知识点：v-model 双向绑定】
+       v-model 专门用在表单元素（input / select 等）上，
+       作用：把表单的值和 data 里的某个数据「双向」绑定：
+
+       方向一（数据 → 视图）：data 里的 text 变了，输入框显示跟着变
+       方向二（视图 → 数据）：你在输入框打字，data 里的 text 跟着变
+
+       对比练习五：以前要 addEventListener('input') 手动同步输入框和数据，
+       现在一行 v-model 就搞定了。
+       ============================================================ -->
+
+  <div id="app">
+    <input type="text" v-model="text" placeholder="随便输入点什么">
+    <p>你输入的内容是：{{ text }}</p>
+  </div>
+
+  <script type="module">
+    import { createApp } from './js/vue.esm-browser.js';
+
+    createApp({
+      data() {
+        return {
+          // TODO 1：补全 text 的初始值（一个空字符串 ''）
+          // 补完后，输入框里打字，下面的 {{text}} 会实时跟着变
+          text: ''
+        }
+      }
+    }).mount('#app');
+  </script>
+
+  <!-- TODO 2（思考，不写代码）：
+       在输入框里打字，观察下面的 {{text}} 是不是实时变化？
+       「双向绑定」的「双向」具体指哪两个方向？
+       （提示见上方知识点回顾） -->
+
+</body>
+</html>

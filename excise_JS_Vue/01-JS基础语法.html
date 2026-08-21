@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>练习一：JS基础语法</title>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+   1. 变量声明：let（可变，可重新赋值）、const（常量，不可重新赋值）
+   2. 数据类型：number / boolean / string / null / undefined
+   3. typeof 运算符：判断数据的类型，返回类型名字符串
+   4. 模板字符串：用反引号 ` 包裹，变量用 ${变量名} 插入
+   5. 输出方式：alert() 弹窗、console.log() 控制台、document.write() 页面
+  ================================================= -->
+
+  <script>
+    /* ==================================================
+       TODO 1：用 let 声明一个变量 num，赋值为 10，
+               然后用 console.log 输出它；
+               再把 num 重新赋值为字符串 "Hello" 并输出。
+       目标效果：控制台依次打印 10 和 "Hello"
+       提示：let 声明的变量可以重新赋值，而且类型可以变
+    ================================================== */
+    let num = 10;
+    console.log(num);
+    num = "Hello";
+    console.log(num);
+
+
+    /* ==================================================
+       TODO 2：用 const 声明一个常量 PI = 3.14，并 console.log 输出它。
+       思考：如果强行写 PI = 5.0 重新赋值，会发生什么？为什么？
+       提示：const 声明的是常量，不能重新赋值
+    ================================================== */
+    const PI = 3.14;
+    console.log(PI);
+
+
+    // 重新赋值会报错
+    // PI = 5.0;
+
+
+    /* ==================================================
+       TODO 3：用 typeof 依次判断下面 5 个值的类型，并 console.log 输出结果：
+               - 数字 10
+               - 字符串 'hello'
+               - 布尔值 true
+               - null
+               - 一个只声明未赋值的变量 x（let x;）
+       思考：null 的 typeof 结果是什么？这个结果合理吗？
+       提示：用法 typeof 值，例如 typeof 10
+    ================================================== */
+    console.log(typeof 10);
+    console.log(typeof "hello");
+    console.log(typeof true);
+    console.log(typeof null);
+    console.log(typeof x);
+
+
+    /* ==================================================
+       TODO 4：先声明两个变量 name = '张三'、age = 20，
+               然后用【模板字符串】拼接成 "我是张三，今年20岁" 并输出。
+       提示：用反引号 ` 包裹，变量用 ${name}、${age} 插入
+    ================================================== */
+    let name = "张三";
+    let age = 20;
+    console.log(`我是${name}，今年${age}岁`);
+
+
+  </script>
+</body>
+</html>

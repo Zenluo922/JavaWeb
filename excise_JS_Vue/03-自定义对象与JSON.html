@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>练习三：自定义对象与JSON</title>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+   1. 对象字面量：let obj = { name:'Tom', age:18 }
+   2. 访问属性：obj.name 或 obj['name']
+   3. 方法简写：obj 里直接写 sing(){...}，方法内用 this 指代当前对象
+   4. JSON 转换：
+      - JSON.stringify(对象)   => 对象转 JSON 字符串
+      - JSON.parse(json字符串) => JSON 字符串转对象
+  ================================================= -->
+
+  <script>
+    /* ==================================================
+       TODO 1：定义一个对象 user，包含三个属性：
+               name = 'Tom'、age = 18、gender = '男'，
+               然后用 console.log 输出 user.name 和 user.age。
+       提示：对象字面量 { name:'Tom', age:18, gender:'男' }
+    ================================================== */
+    let user = {
+      name:'Tom',
+      age:18,
+      gender:'男',
+      sing(){
+        console.log(this.name + '在唱歌');
+      }
+    }
+    console.log(user.name);
+    console.log(user.age);
+    user.sing();
+
+
+    /* ==================================================
+       TODO 2：给 user 对象添加一个方法 sing()，
+               方法内部用 this.name 拼接一句话（如：this.name + '在唱歌'）
+               并用 console.log 输出，最后调用 user.sing()。
+       提示：方法简写 sing() { ... }，注意用 this 访问属性
+    ================================================== */
+
+
+
+    /* ==================================================
+       TODO 3：用 JSON.stringify 把 user 对象转成 JSON 字符串，
+               并 console.log 输出结果。
+       目标效果：控制台打印类似 {"name":"Tom","age":18,"gender":"男"} 的字符串
+       提示：JSON.stringify(user)
+    ================================================== */
+    console.log(JSON.stringify(user));
+
+
+    /* ==================================================
+       TODO 4：先声明一个 JSON 字符串：
+               let jsonStr = '{"name":"heima","age":18}';
+               用 JSON.parse 把它转成对象，再输出对象里的 name。
+       提示：JSON.parse(jsonStr) 返回对象，再用 .name 取值
+    ================================================== */
+    let jsonStr = '{"name":"heima","age":18}';
+    let obj = JSON.parse(jsonStr);
+    console.log(obj.name);
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue基础5：v-for列表渲染</title>
+</head>
+<body>
+
+  <!-- ============================================================
+       【知识点：v-for 列表渲染】
+       作用：循环一个数组，给数组里每个元素都渲染一份同样的标签。
+       语法：v-for="(item, index) in list"
+             - list  是要循环的数组（在 data 里）
+             - item  是每次循环拿到的「当前元素」
+             - index 是当前元素的下标（从 0 开始）
+       :key="index"：给每一条一个唯一标识，Vue 靠它高效更新列表（必写）
+
+       类比：就相当于 for 循环，每次循环往页面吐一个 <li>。
+       ============================================================ -->
+
+  <div id="app">
+    <ul>
+      <!-- 循环 list，每循环一次渲染一个 li -->
+      <li v-for="(item, index) in list" :key="index">{{ index + 1 }} - {{ item.name }} - {{ item.age }}</li>
+    </ul>
+  </div>
+
+  <script type="module">
+    import { createApp } from './js/vue.esm-browser.js';
+
+    createApp({
+      data() {
+        return {
+          // TODO 1：补全 list，一个包含 3 个以上元素的数组
+          // 比如 ['苹果', '香蕉', '橙子']
+          // 补完后，页面会自动渲染出 3 个 li
+          list: [{name:'张三', age:18}, {name:'李四', age:20}, {name:'王五', age:22}]
+        }
+      }
+    }).mount('#app');
+  </script>
+
+  <!-- TODO 2（思考，不写代码）：
+       v-for="(item, index) in list" 里，item 和 index 分别是什么？
+       :key 是干嘛用的？为什么不写会警告？
+       提示：key 是每一条的唯一标识，帮 Vue 高效地增删列表项 -->
+
+  <!-- TODO 3（进阶，选做）：
+       把 list 改成对象数组，比如：
+       [{name:'张三', age:18}, {name:'李四', age:20}]
+       然后在 li 里分别用 {{item.name}} 和 {{item.age}} 显示出来 -->
+
+</body>
+</html>

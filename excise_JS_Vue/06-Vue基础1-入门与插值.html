@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue基础1：入门与插值表达式</title>
+</head>
+<body>
+
+  <!-- ============================================================
+       【Vue 是什么？为什么用它？】
+       练习四、五里，我们要 document.querySelector 拿到元素，
+       再手动 innerHTML 改内容、addEventListener 绑事件 —— 这叫「命令式」，
+       每一步都要自己写。
+
+       Vue 不一样：你只管把数据放到 data 里，模板里用 {{ }} 引用，
+       Vue 自动帮你渲染到页面上；数据一变，页面【自动】跟着变。
+       这叫「数据驱动视图」，不用再手动碰 DOM。
+
+       【一个 Vue 应用的三件套】
+       ① 挂载点：HTML 里一个带 id 的标签（下面这个 <div id="app">）
+       ② 数据  ：JS 里 data() 返回一个对象，对象里就是要显示的数据
+       ③ 挂载  ：createApp({...}).mount('#app') 把数据和挂载点连起来
+                 （'#app' 要跟 HTML 里的 id 对上）
+       ============================================================ -->
+
+  <!-- ① 挂载点：Vue 只管理这个 div 内部的东西 -->
+  <div id="app">
+    <!-- {{ }} 叫「插值表达式」，作用：把 data 里的数据显示到页面 -->
+    <h1>{{ message }}</h1>
+    <p>{{ count }}</p>
+    <!-- {{ }} 里还能写简单的 JS 表达式 -->
+    <p>{{ count + 1 }}</p>
+  </div>
+
+  <!-- ③ 固定样板：引入 Vue + 创建应用（照抄即可，不用背） -->
+  <script type="module">
+    import { createApp } from './js/vue.esm-browser.js';
+
+    createApp({
+      // ② 数据：data() 必须 return 一个对象，对象里就是要用的数据
+      data() {
+        return {
+          // TODO 1：给 message 填一个字符串（比如 '你好，Vue'）
+          // 填完后，上面的 <h1>{{message}}</h1> 会自动显示这句话
+          message: '你好,Vue',
+
+          // TODO 2：给 count 填一个数字（比如 100）
+          // 填完后：<p>{{count}}</p> 显示 100，<p>{{count + 1}}</p> 显示 101
+          count: 100
+        }
+      }
+    }).mount('#app'); // 挂载到 id="app" 的元素上
+  </script>
+
+  <!-- TODO 3（思考，不写代码）：
+       把 message 的值改成别的字符串，保存后刷新页面，标题会变吗？
+       这说明了什么？
+       提示：数据一变，视图自动更新 —— 这就是「数据驱动视图」 -->
+
+</body>
+</html>

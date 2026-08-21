@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue基础4：v-if与v-show</title>
+</head>
+<body>
+
+  <!-- ============================================================
+       【知识点：条件渲染】
+       v-if     ：条件为 true 才【渲染】这个元素（false 时直接从 DOM 删除）
+       v-show   ：条件为 true 才【显示】这个元素（false 时加 display:none 隐藏，元素还在）
+       两个都能控制显示/隐藏，但实现方式不同（见 TODO 3）
+       ============================================================ -->
+
+  <div id="app">
+    <p v-if="show">我是 v-if 控制的</p>
+    <p v-show="show">我是 v-show 控制的</p>
+    <button @click="toggle">点击切换显示 / 隐藏</button>
+  </div>
+
+  <script type="module">
+    import { createApp } from './js/vue.esm-browser.js';
+
+    createApp({
+      data() {
+        return {
+          // TODO 1：补全 show 的值（布尔值 true）
+          // 补完后，两个 p 一开始都会显示
+          show:true
+        }
+      },
+      methods: {
+        // TODO 2：实现 toggle 方法，把 show 取反（true 变 false，false 变 true）
+        // 提示：this.show = !this.show
+        toggle() {
+          this.show = !this.show
+        }
+      }
+    }).mount('#app');
+  </script>
+
+  <!-- TODO 3（思考，不写代码）：
+       点按钮切换几次，然后按 F12 打开「元素 / Elements」面板观察：
+       - v-if 的那一行：false 时是不是【彻底消失了】？
+       - v-show 的那一行：false 时是不是还在，只是多了 style="display:none"？
+       总结：v-if 是增删节点，v-show 是改样式隐藏。
+       频繁切换用 v-show 更省，一次性判断用 v-if。 -->
+
+</body>
+</html>

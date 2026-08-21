@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue基础2：事件与methods</title>
+</head>
+<body>
+
+  <!-- ============================================================
+       【知识点】
+       1. @click 是 v-on:click 的简写，作用：给元素绑定点击事件
+          完整写法 <button v-on:click="add">，简写 <button @click="add">
+       2. methods 是「方法」区，专门放函数；模板里 @click="add"
+          表示「点击时调用 methods 里的 add 方法」
+       3. this：在方法里，this 指向当前这个 Vue 应用实例，
+          所以 this.count 能拿到 data 里的 count
+       ============================================================ -->
+
+  <div id="app">
+    <h1>当前计数：{{ count }}</h1>
+    <button @click="add">点我 +1</button>
+    <button @click="sub">点我 -1</button>
+  </div>
+
+  <script type="module">
+    import { createApp } from './js/vue.esm-browser.js';
+
+    createApp({
+      data() {
+        return {
+          count: 0
+        }
+      },
+      // methods：专门放「方法」（函数）
+      methods: {
+        // TODO 1：实现 add 方法，让 count 每次 +1
+        // 提示：方法里用 this 拿数据，this.count = this.count + 1
+        add() {
+          this.count = this.count +1
+        },
+
+        // TODO 2：实现 sub 方法，让 count 每次 -1
+        // 提示：this.count = this.count - 1
+        sub() {
+          this.count = this.count -1
+        }
+      }
+    }).mount('#app');
+  </script>
+
+  <!-- TODO 3（思考，不写代码）：
+       为什么方法里能用 this.count 拿到 data 里的 count？
+       this 在这里到底是谁？
+       提示：this 指向当前 Vue 实例，data 里的数据都挂在这个实例上 -->
+
+</body>
+</html>
