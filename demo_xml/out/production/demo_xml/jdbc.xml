@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<jdbc>
+    <dev id="001">
+        <username>root</username>
+        <password>root</password>
+        <driver></driver>
+        <url>jdbd:mysql://localhost:3306/atguigu</url>
+    </dev>
+    <test id="002">
+        <username>zhangsan</username>
+        <password>123456</password>
+        <driver></driver>
+        <url>jdbd:mysql://localhost:3306/atguigu</url>
+    </test>
+    <formal id="003">
+        <username>lisi</username>
+        <password>654321</password>
+        <driver></driver>
+        <url>jdbd:mysql://localhost:3306/atguigu</url>
+    </formal>
+</jdbc>
