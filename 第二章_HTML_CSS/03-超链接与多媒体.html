@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>03-超链接与多媒体</title>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+       对应笔记：../../笔记/02_第二章 HTML&CSS.md
+       不会做时：打开笔记后 Ctrl+F 搜下面的小节标题
+   1. 超链接 a：href(地址) target(_blank 新窗口 / _self 当前窗口)
+   2. 图片 img：src(地址) title(悬停文字) alt(加载失败提示)
+  ================================================= -->
+
+  <!-- TODO 1【超链接】
+       对应笔记：2.5 超链接标签
+       写三个超链接：
+       1. 跳到百度（外链，新窗口打开）http://www.baidu.com
+       2. 跳到本地文件 01-HTML基础结构与语法规则.html（相对路径，当前窗口）
+       3. 跳到百度（target="_self" 当前窗口打开）
+       目标效果：点击后分别在新窗口/当前窗口跳转 -->
+       <p><a href="http://www.baidu.com" target="_blank"><b>跳我1</b></a></p>
+       <p><a href="01-HTML基础结构与语法规则.html" target="_self"><b>跳我2</b></a></p>
+       <p><a href="http://www.baidu.com" target="_self"><b>跳我3</b></a></p>
+
+
+  <!-- TODO 2【图片】
+       对应笔记：2.6 多媒体标签（img 部分）
+       写一个 img 标签引入一张图片，并设置：
+       1. src 指向同目录下 img/logo.png（或任意一张图）
+       2. title="鼠标悬停显示"
+       3. alt="图片加载失败"
+       目标效果：正常显示图片；故意把 src 写错一个，能看到 alt 提示文字
+       思考：alt 有什么用？图片加载不出来时用户体验如何？ -->
+       <img src="img/zenluo.png" title="怎落笔才对" alt="加载失败" style="width: 200px;">
+
+
+
+</body>
+</html>
