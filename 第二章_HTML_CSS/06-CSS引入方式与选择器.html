@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>06-CSS引入方式与选择器</title>
+  <style>
+     input{
+       background-color: blue;
+       color:white;
+     }
+     .red{
+          color:red;
+     }
+     .big{
+          font-size: 24px;
+     }
+  </style>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+       对应笔记：../../笔记/02_第二章 HTML&CSS.md
+       不会做时：打开笔记后 Ctrl+F 搜下面的小节标题
+   1. 三种引入：行内(style属性) / 内嵌(head里style标签) / 外链(link引入css文件)
+   2. 选择器：元素 input{} / id #btn1{} / class .shape{}
+   class 最常用（一个元素可有多个 class，样式可叠加）
+  ================================================= -->
+
+  <!-- TODO 1【三种引入方式】⭐
+       对应笔记：3.1 CSS引入方式
+       用三种方式分别给按钮设置"蓝色背景、白色文字"：
+       1. 按钮1：行内式（style 属性）
+       2. 按钮2：内嵌式（head 里 style 标签 + 元素选择器）
+       3. 按钮3：外链式（新建 style.css，用 link 引入）
+       目标效果：三个按钮样式一样 -->
+       <!-- 提示：外链需要你新建一个 style.css 文件并 link 引入 -->
+  <input type="button" value="按钮1" style="background-color: blue; color:white">
+  <input type="button" value="按钮2">
+  <input type="button" value="按钮3">
+
+
+  <!-- TODO 2【class 选择器】⭐
+       对应笔记：3.2 CSS选择器（class选择器）
+       用 class 选择器实现：
+       1. 定义两个类 .red（红色文字）和 .big（字体 24px）
+       2. 第一个 span 同时用 red 和 big（两个 class 空格隔开）
+       3. 第二个 span 只用 red
+       目标效果：第一个 span 又大又红，第二个 span 只是红色
+       提示：class="red big" 两个样式会叠加 -->
+       <span class="red big">大又红</span>
+       <span class="red">只红</span>
+
+
+
+</body>
+</html>

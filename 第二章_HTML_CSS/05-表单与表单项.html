@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>05-表单与表单项</title>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+       对应笔记：../../笔记/02_第二章 HTML&CSS.md
+       不会做时：打开笔记后 Ctrl+F 搜下面的小节标题
+   1. form：action(提交到哪) method(get/post)
+   2. 表单项：input(各种type) / select / textarea
+   3. ⚠️ 大坑：表单项必须写 name，否则提交时数据丢失
+  ================================================= -->
+
+  <!-- TODO 1【表单】⭐
+       对应笔记：2.8 表单标签
+       写一个登录表单：
+       1. form 的 action="/login"、method="post"
+       2. 用户名输入框(name="username")
+       3. 密码框(name="password" type="password")
+       4. 一个提交按钮
+       目标效果：填完点提交，F12 看请求体里带着 username/password -->
+       <form action="/login" method="post">
+          <input type="text" name = "username"/>
+          <input type="password" name="password"/><br>
+          <input type="submit" value="登录"/>
+          </form>
+
+
+  <!-- TODO 2【各种表单项】⭐
+       对应笔记：2.9 常见表单项标签
+       写一个表单，包含：
+       1. 单行文本框
+       2. 密码框
+       3. 单选 radio（性别：男/女，同名 name 互斥）
+       4. 复选框 checkbox（爱好：篮球/足球/游戏，至少两个）
+       5. 下拉框 select（学历：本科/硕士）
+       6. 多行文本框 textarea（自我介绍）
+       再加一个"故意不写 name"的输入框。
+       目标效果：点提交，F12 看请求，没写 name 的那个框的数据不见了 -->
+       <!-- 提示：radio 同名 name 才能互斥；select 的 name 写 select 上、value 写 option 上 -->
+<form action ="register" method="post">
+     <input type="text" name="text"/>
+     <input type="password" name="password"/>
+     <br>
+     <input type="radio" name="sex" value="男"/>男
+     <input type="radio" name="sex" value="女"  checked = "checked"/>女
+     <br>
+     <input type="checkbox" name="hobby" value="篮球"/>篮球
+     <input type="checkbox" name="hobby" value="足球"/>足球
+     <input type="checkbox" name="hobby" value="游戏"/>游戏
+     <br>
+     <select name="education">
+          <option value="本科">本科</option>
+          <option value="硕士">硕士</option>
+     </select>
+     <br>
+     <textarea name="selfIntroduction" rows="4" cols="50"></textarea>
+     <br>
+     <input type="text"/>
+     <br>
+     <input type="submit" value="注册"/>
+ </form>
+
+
+</body>
+</html>

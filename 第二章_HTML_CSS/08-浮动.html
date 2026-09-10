@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>08-浮动</title>
+  <style>
+    .box { width: 100px; height: 100px; border: 1px solid blue; }
+    .d1 { background-color: greenyellow; }
+    .d2 { background-color: rgb(79,230,124); }
+    .d3 { background-color: rgb(26,165,208); }
+    .float-left {
+      float: left;
+    }
+    .float-right {
+      float: right;
+    }
+    .clear {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+       对应笔记：../../笔记/02_第二章 HTML&CSS.md
+       不会做时：打开笔记后 Ctrl+F 搜下面的小节标题
+   1. float:left 向左靠 / float:right 向右靠
+   2. 脱离文档流：不占原来位置，后面的元素会补上来
+   3. 设计初衷：文字环绕图片，浮动不会挡住文字
+  ================================================= -->
+
+  <!-- TODO 1【三个盒子横排】⭐
+       对应笔记：3.4 CSS浮动（左浮动）
+       给下面三个 div 加 float:left，让它们水平排成一行
+       目标效果：三个彩色盒子从左到右排成一行
+       思考：不加 float 时它们是什么排列？ -->
+
+  <div class="box d1 float-left">框1</div>
+  <div class="box d2 float-left">框2</div>
+  <div class="box d3 float-left">框3</div>
+
+  <hr class="clear">
+
+  <!-- TODO 2【左右浮动】⭐
+       对应笔记：3.4 CSS浮动（float:left / float:right）
+       给下面两个盒子：左边那个 float:left，右边那个 float:right
+       目标效果：一个贴左、一个贴右，分居两端
+       提示：分别给两个 div 设置不同的 float -->
+
+  <div class="box d1 float-left">左</div>
+  <div class="box d3 float-right">右</div>
+
+</body>
+</html>

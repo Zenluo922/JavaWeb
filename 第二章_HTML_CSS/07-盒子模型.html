@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>07-盒子模型</title>
+  <style>
+    /* 在这里写你的 CSS */
+    .box-model{
+      width: 200px;
+      height: 100px;
+      padding: 10px;
+      border: 1px solid blue;
+      margin: 20px;
+    }
+    .margin-demo{
+      margin: 10px 20px 30px 40px;
+      border: 1px solid green;
+    }
+    .container{
+      margin: 0 auto;
+      width: 500px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+       对应笔记：../../笔记/02_第二章 HTML&CSS.md
+       不会做时：打开笔记后 Ctrl+F 搜下面的小节标题
+   1. 盒子模型从内到外：content(内容) > padding(内边距) > border(边框) > margin(外边距)
+   2. margin 简写：margin: 上 右 下 左（顺时针）
+   3. 版心居中：固定 width + margin: 0 auto
+  ================================================= -->
+
+  <!-- TODO 1【盒子四部分】⭐
+       对应笔记：3.6 CSS盒子模型
+       给下面这个 div 设置：
+       1. 宽 200px、高 100px
+       2. 内边距 padding: 10px
+       3. 边框 border: 1px solid blue
+       4. 外边距 margin: 20px
+       用 F12 查看这个盒子的 content/padding/border/margin 各占多少
+       目标效果：F12 里能清楚看到四层结构 -->
+
+
+
+  <div class="box-model">盒子内容</div>
+
+
+  <!-- TODO 2【margin 简写 + 版心居中】⭐
+       对应笔记：3.6 CSS盒子模型（margin 简写和居中）
+       1. 写一个 div，用 margin: 10px 20px 30px 40px（分别对应上右下左）
+       2. 再写一个宽 500px 的 div，用 margin: 0 auto 让它水平居中
+       目标效果：第二个 div 在页面里水平居中
+       提示：margin: 0 auto 就是上下 0、左右 auto，左右 auto 才能居中 -->
+  <div class="margin-demo">四个方向的外边距</div>
+  <div class="container">水平居中的 500px 盒子</div>
+
+</body>
+</html>

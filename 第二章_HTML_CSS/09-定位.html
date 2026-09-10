@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>09-定位</title>
+  <style>
+    .box { width: 100px; height: 100px; }
+    .d1 { background-color: greenyellow; 
+    position: relative;
+    left: 30px;
+    top: 30px;
+    }
+    .d2 { background-color: rgb(79,230,124); }
+    .d3 { background-color: rgb(26,165,208); }
+
+    /* 在这里写你的 CSS */
+  
+    .d4 { background-color: greenyellow; 
+    position: absolute;
+    left: 300px;
+    top: 100px;
+    }
+    .d5 { background-color: rgb(79,230,124); }
+    .d6 { background-color: rgb(26,165,208); }
+
+    .d7 { background-color: greenyellow; 
+    position: fixed;
+    left: 300px;
+    top: 100px;
+    }
+    .d8 { background-color: rgb(79,230,124); }
+    .d9 { background-color: rgb(26,165,208); }
+  </style>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+       对应笔记：../../笔记/02_第二章 HTML&CSS.md
+       不会做时：打开笔记后 Ctrl+F 搜下面的小节标题
+   1. static 默认 / relative 相对自己(保留位置) / absolute 绝对(让出位置) / fixed 固定(滚不动)
+   2. 配合 top/left/right/bottom 使用
+  ================================================= -->
+
+  <!-- TODO 1【relative vs absolute】⭐
+       对应笔记：3.5 CSS定位（相对定位 / 绝对定位）
+       1. 给第一组第一个盒子 d1 加 position:relative; left:30px; top:30px
+          观察：原来位置还空着（框2框3没顶上来）
+       2. 给第二组第一个盒子 d4 加 position:absolute; left:300px; top:100px
+          观察：框2框3顶上来了
+       目标效果：理解"relative 保留位置、absolute 让出位置"的区别 -->
+
+  <div class="box d1">框1</div>
+  <div class="box d2">框2</div>
+  <div class="box d3">框3</div>
+
+  <hr>
+
+  <div class="box d4">框1</div>
+  <div class="box d5">框2</div>
+  <div class="box d6">框3</div>
+
+  <hr>
+
+  <!-- TODO 2【fixed 固定定位】⭐
+       对应笔记：3.5 CSS定位（固定定位）
+       给下面第一个盒子 d7 加 position:fixed; right:30px; top:30px
+       目标效果：框1 固定在浏览器右上角，页面滚动也不动
+       思考：fixed 常用来做"返回顶部"按钮、固定导航栏，为什么？ -->
+
+  <div class="box d7">框1</div>
+  <div class="box d8">框2</div>
+  <div class="box d9">框3</div>
+
+</body>
+</html>
