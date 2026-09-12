@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07-DOM操作</title>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+       对应笔记：../../笔记/03_第三章 JavaScript.md
+       不会做时：打开笔记后 Ctrl+F 搜下面的小节标题
+   1. 获取元素：getElementById / getElementsByTagName / getElementsByClassName / querySelector
+   2. 改内容：innerText(纯文本) / innerHTML(识别html)
+   3. 改样式：元素.style.样式名 = "值"（- 转驼峰）
+  ================================================= -->
+
+  <h1 id="title">原标题</h1>
+  <div id="box">hello</div>
+  <ul id="list">
+    <li>项目一</li>
+    <li>项目二</li>
+    <li>项目三</li>
+    <li>项目四</li>
+  </ul>
+
+  <script>
+     /* ==================================================
+       TODO 1【获取元素 + 改内容】⭐
+       对应笔记：7.2 获取页面元素的几种方式 / 7.3 内部文本操作
+       1. 用 getElementById 拿到 id=title 的 h1，把内容改成"改过的标题"
+       2. 用 getElementById 拿到 id=box 的 div，用 innerHTML 改成 "<b>加粗了</b>"
+       3. 再用 innerText 把 box 改成 "<i>斜体标签</i>"
+       目标效果：观察 innerHTML 和 innerText 的区别（一个识别标签、一个不识别）
+    ================================================== */
+    window.onload = function(){
+      var title = document.getElementById("title");
+      title.innerText="改过的标题";
+      title.style.color="green";
+      title.style.fontSize="30px";
+
+      var box = document.getElementById("box");
+      box.innerHTML="<b>加粗了</b>";
+      box.innerText="<i>斜体标签</i>";
+
+      var list = document.getElementsByTagName("li");
+      for(var i=0;i<list.length;i++){
+        if(i%2==0){
+          list[i].style.backgroundColor="red";
+        }else{
+          list[i].style.backgroundColor="blue";
+        }
+      }
+    };
+
+
+  </script>
+</body>
+</html>

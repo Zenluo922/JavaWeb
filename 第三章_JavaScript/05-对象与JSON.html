@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05-对象与JSON</title>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+       对应笔记：../../笔记/03_第三章 JavaScript.md
+       不会做时：打开笔记后 Ctrl+F 搜下面的小节标题
+   1. 对象字面量：var obj = { name:'Tom', age:18 }（属性逗号隔开）
+   2. JSON.parse(str) 字符串→对象；JSON.stringify(obj) 对象→字符串
+  ================================================= -->
+
+  <script>
+     /* ==================================================
+       TODO 1【对象字面量】⭐
+       对应笔记：4.1 JS声明对象的语法（{}形式）
+       用 {} 字面量创建一个学生对象，包含：
+       name、age、hobbies(数组)、sayHi(方法，方法里用 this 输出名字)
+       然后 console.log 输出 name、age，并调用 sayHi()。
+       目标效果：能正确读取属性、调用方法
+    ================================================== */
+    var student ={
+      "name":"张三",
+      "age":18,
+      "hobbies":["篮球","足球","跑步"],
+      "sayHi":function(){
+        console.log("你好,"+this.name);
+      }
+    }
+    console.log(student.name);
+    console.log(student.age);
+    student.sayHi();
+
+
+     /* ==================================================
+       TODO 2【JSON 互转】⭐
+       对应笔记：4.2 JSON格式
+       1. 定义一个 JSON 字符串（含 name、age、friend 嵌套对象、pets 数组）
+       2. 用 JSON.parse 转成对象，读取其中嵌套的属性并输出
+       3. 再把对象用 JSON.stringify 转回字符串，输出
+       目标效果：理解字符串↔对象 双向转换
+    ================================================== */
+    var jsonStr = `{
+      "name": "张三",
+      "age": 18,
+      "friend": {
+        "name": "李四",
+        "age": 18
+      },
+      "pets": ["小白", "小黑"]
+    }`;
+    var obj = JSON.parse(jsonStr);
+    console.log(obj.name);
+    console.log(obj.age);
+    console.log(obj.friend.name);
+    console.log(obj.friend.age);
+    console.log(obj.pets[0]);
+    console.log(obj.pets[1]);
+    var jsonStr2 = JSON.stringify(obj);
+    console.log(jsonStr2);
+    
+
+
+  </script>
+</body>
+</html>

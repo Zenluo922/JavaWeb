@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01-变量与数据类型</title>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+       对应笔记：../../笔记/03_第三章 JavaScript.md
+       不会做时：打开笔记后 Ctrl+F 搜下面的小节标题
+   1. 变量：var 声明，弱类型，可重复声明、可改类型
+   2. 数据类型：number / string / boolean / object / function / undefined / null
+   3. 坑：typeof null = "object"；未赋值变量 = undefined
+  ================================================= -->
+
+  <script>
+     /* ==================================================
+       TODO 1【var 弱类型】⭐
+       对应笔记：2.2 JS的变量
+       1. 用 var 声明一个变量 a = 10，console.log 输出
+       2. 再把 a 重新赋值为字符串 "hello"，输出
+       3. 声明一个变量 b 但不赋值，用 typeof 输出它的类型
+       目标效果：控制台依次输出 10、"hello"、undefined
+    ================================================== */
+    var a = 10;
+    console.log(a);
+    a="hello";
+    console.log(a);
+    var b;
+    console.log(typeof b);
+
+
+     /* ==================================================
+       TODO 2【typeof 和 NaN/Infinity】⭐
+       对应笔记：2.1 JS的数据类型 / 2.3 JS的运算符（/和%）
+       1. 用 typeof 依次输出：数字 10、字符串 "hi"、布尔 true、null、数组 [1,2]
+       2. 计算并输出 10 / 0 和 10 % 0 的结果
+       目标效果：观察 typeof null 是不是 "object"；观察除0/模0的结果
+       思考：typeof null 为什么是 object？（历史遗留 bug）
+    ================================================== */
+    console.log(typeof 10);
+    console.log(typeof "hi");
+    console.log(typeof true);
+    console.log(typeof null);
+    console.log(typeof [1,2]);
+    console.log(10/0);
+    console.log(10%0);
+
+
+  </script>
+</body>
+</html>

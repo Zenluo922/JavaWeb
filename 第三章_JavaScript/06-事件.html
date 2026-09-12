@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06-事件</title>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+       对应笔记：../../笔记/03_第三章 JavaScript.md
+       不会做时：打开笔记后 Ctrl+F 搜下面的小节标题
+   1. 属性绑定：onclick="函数()"
+   2. DOM 绑定：元素.onclick = 函数  /  addEventListener
+   3. 常见事件：click / blur / focus / change / mouseover / mouseleave
+  ================================================= -->
+
+  <input type="text" id="in1" onfocus="console.log('获得焦点')" onblur="console.log('失去焦点')" onchange="console.log(this.value)">
+  <button id="btn1">按钮</button>
+
+  <script>
+     /* ==================================================
+       TODO 1【属性绑定】⭐
+       对应笔记：5.3 事件的绑定（通过属性绑定）
+       给下面这两个元素用【属性】方式绑定事件（在 HTML 标签上写）：
+       1. 给 input 加 onfocus、onblur，触发时 console.log("获得焦点")/"失去焦点"
+       2. 给 input 加 onchange，触发时 console.log(this.value)
+       提示：onchange 在内容改变且失焦时触发
+    ================================================== */
+
+
+
+     /* ==================================================
+       TODO 2【DOM 绑定】⭐
+       对应笔记：5.3 事件的绑定（通过DOM编程绑定）
+       用 window.onload 包裹，在页面加载完成后：
+       1. 用 document.getElementById 拿到 btn1
+       2. 给 btn1 绑定 onclick（DOM 方式），点击时 console.log("按钮被点了")
+       目标效果：点击按钮控制台打印
+       提示：DOM 绑定要先等页面加载完（window.onload），否则拿不到元素
+    ================================================== */
+    window.onload = function(){
+      var btn1 = document.getElementById("btn1");
+      btn1.onclick = function(){
+        console.log("按钮被点了");
+      }
+    }
+
+
+  </script>
+</body>
+</html>

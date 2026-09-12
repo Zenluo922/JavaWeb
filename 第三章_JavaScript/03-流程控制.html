@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03-流程控制</title>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+       对应笔记：../../笔记/03_第三章 JavaScript.md
+       不会做时：打开笔记后 Ctrl+F 搜下面的小节标题
+   1. if/else if/else 分支
+   2. switch（case 不写 break 会穿透）
+   3. for / while 循环
+   4. ⚠️ for-in 遍历数组：变量是【下标】不是元素值
+  ================================================= -->
+
+  <script>
+     /* ==================================================
+       TODO 1【if/switch】
+       对应笔记：3.1 JS分支结构
+       1. 声明 score = 85，用 if/else 判断：>=90优秀 >=70良好 >=60及格 否则不及格
+       2. 用 switch 根据 month 判断季节（3-5春 6-8夏 9-11秋 12/1/2冬）
+       目标效果：控制台分别输出"良好"和对应季节
+    ================================================== */
+    var score = 85;
+    var month = 6;
+    if(score>=90){
+      console.log("优秀");
+    }else if(score>=70){
+      console.log("良好");
+    }else if(score>=60){
+      console.log("及格");
+    }else{
+      console.log("不及格");
+    }
+    switch(month){
+      case 3:
+      case 4:
+      case 5:
+        console.log("春");
+        break;
+      case 6:
+      case 7:
+      case 8:
+        console.log("夏");
+        break;
+      case 9:
+      case 10:
+      case 11:
+        console.log("秋");
+        break;
+      case 12:
+      case 1:
+      case 2:
+        console.log("冬");
+        break;
+      default:
+        console.log("月份有误");
+    }
+
+
+     /* ==================================================
+       TODO 2【for-in 遍历数组】（易错点！）
+       对应笔记：3.2 JS循环结构（foreach循环）
+       声明数组 cities = ["北京","上海","深圳"]，
+       用 for(var i in cities) 遍历，console.log 输出每个元素。
+       注意：i 是【下标 0/1/2】，不是元素值，拿元素要写 cities[i]。
+       目标效果：输出 北京 / 上海 / 深圳
+       思考：这和 Java 的增强 for 有什么不同？
+    ================================================== */
+var cities=["北京","上海","深圳"];
+for(var i in cities){
+  console.log(cities[i])
+}
+
+
+  </script>
+</body>
+</html>

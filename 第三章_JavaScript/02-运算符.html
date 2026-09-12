@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02-运算符</title>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+       对应笔记：../../笔记/03_第三章 JavaScript.md
+       不会做时：打开笔记后 Ctrl+F 搜下面的小节标题
+   1. == 会转类型再比较；=== 类型不同直接 false（推荐 ===）
+   2. || 和 && 本身就是短路逻辑；| & ^ 是位运算符
+  ================================================= -->
+
+  <script>
+     /* ==================================================
+       TODO 1【== 和 === 的区别】⭐
+       对应笔记：2.3 JS的运算符（关系运算符）
+       分别用 == 和 === 比较下面几组，console.log 输出结果，观察区别：
+       1. '123' 和 123
+       2. true 和 1
+       3. null 和 undefined
+       目标效果：理解 == 会做类型转换、=== 不会
+    ================================================== */
+    console.log('123'==123);
+    console.log('123'===123);
+    console.log(true==1);
+    console.log(true===1);
+    console.log(null==undefined);
+    console.log(null===undefined);
+
+     /* ==================================================
+       TODO 2【短路运算】⭐
+       对应笔记：2.3 JS的运算符（逻辑运算符）
+       1. 写 console.log(0 || '默认值') 和 console.log('有值' || '默认值')
+       2. 写 console.log(1 && 2) 和 console.log(0 && 2)
+       目标效果：理解 || 取第一个真值、&& 短路
+       思考：短路运算在实际开发里常用来写"默认值"，你知道为什么吗？
+    ================================================== */
+    console.log(0||'默认值');
+    console.log('有值' ||'默认值');
+    console.log(1&&2);
+    console.log(0&&2);
+
+
+  </script>
+</body>
+</html>
