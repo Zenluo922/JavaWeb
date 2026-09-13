@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>08-BOM与存储</title>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+       对应笔记：../../笔记/03_第三章 JavaScript.md
+       不会做时：打开笔记后 Ctrl+F 搜下面的小节标题
+   1. window 顶级对象：location(地址栏) / localStorage / sessionStorage
+   2. 弹窗：alert / confirm(返回布尔) / prompt(输入框)
+   3. 存储：setItem / getItem / removeItem
+   4. localStorage 持久级(关浏览器还在) / sessionStorage 会话级(关了就没了)
+  ================================================= -->
+
+  <button onclick="testConfirm()">确认框</button>
+  <button onclick="testPrompt()">输入框</button>
+  <button onclick="jump()">跳转百度</button>
+  <hr>
+  <button onclick="saveData()">存数据</button>
+  <button onclick="readData()">读数据</button>
+  <button onclick="removeData()">删数据</button>
+
+  <script>
+     /* ==================================================
+       TODO 1【弹窗 + 跳转】⭐
+       对应笔记：6.3 window对象的常见方法 / 6.4 控制浏览器行为演示
+       1. testConfirm：用 confirm("确定删除吗?")，根据返回值 alert 不同内容
+       2. testPrompt：用 prompt("请输入昵称","张三")，把输入内容 alert 出来
+       3. jump：用 window.location.href 跳转到 http://www.baidu.com
+       目标效果：三种交互 + 跳转都能用
+    ================================================== */
+    function testConfirm() { /* TODO */
+      var con=confirm("确定删除吗?");
+      if(con){
+        alert("删除成功");
+      }else{
+        alert("删除失败");
+     }
+    }
+    function testPrompt() { /* TODO */ 
+      var name = prompt("请输入昵称","张三");
+      alert("你输入的是"+name);
+         }
+    function jump() { /* TODO */
+      var flag = confirm("跳转到百度，确定吗？");
+      if(flag){
+        window.location.href = "http://www.baidu.com";
+      }
+     }
+    
+
+     /* ==================================================
+       TODO 2【localStorage vs sessionStorage】⭐
+       对应笔记：6.5 会话级和持久级数据存储
+       1. saveData：分别往 sessionStorage 和 localStorage 存一个键值对
+          （key 用 sessionMsg / localMsg）
+       2. readData：读取两个值并 console.log
+       3. removeData：删除两个值
+       验证：存完后关闭浏览器再打开，看哪个还在、哪个没了
+       目标效果：理解持久级 vs 会话级的区别
+       提示：sessionStorage.setItem("k","v") / localStorage.setItem("k","v")
+       思考：token 该存哪个？为什么？
+    ================================================== */
+  
+    function saveData(){
+      sessionStorage.setItem("k","v");
+      localStorage.setItem("k","v");
+    }
+    function readData(){
+      console.log(sessionStorage.getItem("k"));
+      console.log(localStorage.getItem("k"));
+    }
+    function removeData(){
+      sessionStorage.removeItem("k");
+      localStorage.removeItem("k");
+    }
+
+  </script>
+</body>
+</html>

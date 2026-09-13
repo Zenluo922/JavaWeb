@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09-正则表达式</title>
+</head>
+<body>
+
+  <!-- ================= 知识点回顾 =================
+       对应笔记：../../笔记/03_第三章 JavaScript.md
+       不会做时：打开笔记后 Ctrl+F 搜下面的小节标题
+   1. 创建：let reg = /pattern/修饰符（g全局 i忽略大小写）
+   2. reg.test(str) 返回 true/false（验证）
+   3. str.match(reg) 返回数组；str.replace(reg,新值) 替换
+   4. 元字符：\d数字 \w字母数字下划线 ^开头 $结尾 [0-9]范围
+   5. 量词：* + ? {n} {n,m}
+  ================================================= -->
+
+  <script>
+     /* ==================================================
+       TODO 1【test 验证】⭐
+       对应笔记：8.1 正则表达式简介 / 8.2.1 验证
+       1. 写一个正则判断字符串是否以字母开头，测 "Hello123"（应 true）
+       2. 写一个正则验证是否全由数字组成，测 "12345"（true）和 "12a45"（false）
+       目标效果：三个结果分别输出 true / true / false
+       提示：/^[a-zA-Z]/  和  /^\d+$/
+    ================================================== */
+      var ref1 = /^[a-zA-Z]/;
+      var str = "Hello123";
+      console.log(ref1.test(str));
+
+      var ref2=/^\d+$/;
+      var str1="12345";
+      var str2="12a45";
+      console.log(ref2.test(str1));
+      console.log(ref2.test(str2));
+     /* ==================================================
+       TODO 2【手机号 + 全局替换】⭐
+       对应笔记：8.2.3 替换 / 8.2.6 元字符使用 / 8.2.7 字符集合的使用
+       1. 写一个正则校验手机号（11 位数字、以 1 开头），测 "13812345678"
+       2. 把 "I love Java, Java is great" 里所有 "Java" 替换成 "前端"
+       目标效果：true；I love 前端, 前端 is great
+       提示：手机号 /^1\d{10}$/；替换用 /Java/g
+       思考：replace 不加 g 会怎样？
+    ================================================== */
+    var ref3 = /^1\d{10}$/;
+    var str3="13812345678";
+    console.log(ref3.test(str3));
+
+    var str4="I love Java, Java is great";
+    console.log(str4.replace(/Java/g,"前端"));
+
+
+  </script>
+</body>
+</html>
