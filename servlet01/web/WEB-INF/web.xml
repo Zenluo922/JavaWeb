@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+    <servlet>
+        <servlet-name>userServlet</servlet-name>
+        <servlet-class>com.atguigu.servlet.UserSerlet</servlet-class>
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userServlet</servlet-name>
+        <url-pattern>/userServlet</url-pattern><!--action-->
+    </servlet-mapping>
+
+    <!--<servlet>
+        <servlet-name>servlet1</servlet-name>
+        <servlet-class>com.atguigu.servlet.Servlet1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet1</servlet-name>
+        <url-pattern>/s1</url-pattern>&lt;!&ndash;Tomcat先通过s1找到这里，再看sevlet-name找到上面的name，
+        然后定位到servlet-class的目录开始反射&ndash;&gt;
+    </servlet-mapping>-->
+    <servlet>
+        <servlet-name>servletLifeCycle</servlet-name>
+        <servlet-class>com.atguigu.servlet.ServletLifeCycle</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletLifeCycle</servlet-name>
+        <url-pattern>/servletLifeCycle</url-pattern>
+    </servlet-mapping>
+
+</web-app>
